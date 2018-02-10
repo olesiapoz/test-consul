@@ -10,5 +10,5 @@ docker run -d \
 	--name web \
 	-p 8080:80 \
 	--restart unless-stopped \
-	-v ~/consul/ip.html:/usr/share/ngmix/htmpl/ip.html:ro \
-	ngnix
+	-v ~/consul/ip.html:/usr/share/nginx/htmpl/ip.html:ro \
+	nginx

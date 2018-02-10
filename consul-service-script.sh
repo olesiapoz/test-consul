@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 cat > /etc/consul/consul-config.json << EOF
 {
   "data_dir": "/opt/consul/data",

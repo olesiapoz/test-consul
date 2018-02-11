@@ -20,11 +20,22 @@ cat > /etc/consul/consul-service.json << EOF
 }
 EOF
 
-PID_FILE=/var/run/consul.pid 
+cat > /etc/consul/consul-service.json << EOF
+{
+"service": {
+  "name": "ha-proxy",
+  "port": 80,
+  "check": {
+        "http": "http://localhost:80",
+        "interval": "5s"
+    }
+  }
+}
+EOF
 
-consul_pid=$(pgrep consul)
+PID_FILE=/var/run/consul.pid
 
-kill $consul_pid
+kill `cat $PID_FILE`
 echo "Kill status: $?"
 
 ip=$(ifconfig eth0 | grep 'inet ' | awk '{ print substr($2,1) }')

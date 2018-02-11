@@ -7,7 +7,7 @@ cat > /etc/consul/consul-config.json << EOF
 }
 EOF
 
-cat /home/centos/test-consul-script-master/consul-ha-proxy-nginx.json > /etc/consul/consul-service.json 
+cat /home/centos/test-consul-config-master/consul-ha-proxy-nginx.json > /etc/consul/consul-service.json
 
 PID_FILE=/var/run/consul.pid
 

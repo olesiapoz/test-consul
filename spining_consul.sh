@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 sudo yum install unzip -y
-wget https://releases.hashicorp.com/consul/1.0.3/consul_1.0.3_linux_386.zip -O consul_1.0.3_linux_amd64.zip
-unzip consul_1.0.3_linux_amd64.zip
+CONSUL_VERSION=1.0.3
+wget https://releases.hashicorp.com/consul/${CONSUL_VERSION}/consul_${CONSUL_VERSION}_linux_386.zip -O consul_${CONSUL_VERSION}.zip
+unzip consul_${CONSUL_VERSION}.zip
 cp consul /usr/bin
 mkdir -p /etc/consul
 cat > /etc/consul/consul-config.json << EOF
@@ -9,7 +10,7 @@ cat > /etc/consul/consul-config.json << EOF
   "data_dir": "/opt/consul/data",
   "client_addr": "0.0.0.0",
   "retry_join": ["192.168.0.11", "192.168.0.20", "192.168.0.18", "192.168.0.24"]
-  "disable_remote_exec": "false"
+  "disable_remote_exec": "False"
 }
 EOF
 

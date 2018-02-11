@@ -18,15 +18,12 @@ cat > /etc/consul/consul-service.json << EOF
     }
   }
 }
-EOF
-
-cat > /etc/consul/consul-service.json << EOF
 {
 "service": {
   "name": "ha-proxy",
   "port": 8433,
   "check": {
-        "http": "http://localhost:80",
+        "http": "http://localhost:8443",
         "interval": "5s"
     }
   }

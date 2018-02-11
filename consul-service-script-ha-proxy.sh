@@ -7,26 +7,7 @@ cat > /etc/consul/consul-config.json << EOF
 }
 EOF
 
-cat > /etc/consul/consul-service.json << EOF
-{
-"service": {
-  "name": "web",
-  "port": 8080,
-  "check": {
-        "http": "http://localhost:8080",
-        "interval": "5s"
-    }
-  }
-"service": {
-  "name": "ha-proxy",
-  "port": 8433,
-  "check": {
-        "http": "http://localhost:8443",
-        "interval": "5s"
-    }
-  }
-}
-EOF
+cat /home/centos/test-consul-script-master/consul-ha-proxy-nginx.json > /etc/consul/consul-service.json 
 
 PID_FILE=/var/run/consul.pid
 

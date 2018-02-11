@@ -8,7 +8,8 @@ cat > /etc/consul/consul-config.json << EOF
 {
   "data_dir": "/opt/consul/data",
   "client_addr": "0.0.0.0",
-  "retry_join": ["192.168.0.11"]
+  "retry_join": ["192.168.0.11", "192.168.0.20", "192.168.0.18", "192.168.0.24"]
+  "disable_remote_exec": "false"
 }
 EOF
 

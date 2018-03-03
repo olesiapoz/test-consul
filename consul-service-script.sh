@@ -1,3 +1,4 @@
+
 #!/usr/bin/bash
 cat > /etc/consul/consul-config.json << EOF
 {

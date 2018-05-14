@@ -4,7 +4,7 @@ cat > /etc/consul/consul-config.json << EOF
 {
   "data_dir": "/opt/consul/data",
   "client_addr": "0.0.0.0",
-  "retry_join": ["192.168.0.11"]
+  "retry_join": ["192.168.0.11", "192.168.0.22", "192.168.0.18", "192.168.0.30"]
 }
 EOF
 

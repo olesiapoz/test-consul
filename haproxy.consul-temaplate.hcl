@@ -12,7 +12,7 @@ template {
 
   # This options tells Consul Template to create the parent directories of the
   # destination path if they do not exist. The default value is true.
-  create_dest_dirs = true
+  # create_dest_dirs = true
 
   # This is the optional command to run when the template is rendered. The
   # command will only run if the resulting template changes. The command must

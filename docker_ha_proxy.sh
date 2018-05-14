@@ -6,7 +6,7 @@ docker container ls | grep "ha-proxy-lb" | awk '{ print $1 }' | xargs docker rm 
 #ha-proxy+docker+ mount volume(ip.htmp page)
 docker run -d \
 	--name ha-proxy-lb \
-	-p 8081:80 \
+	-p 80:80 \
 	--restart unless-stopped \
 	-v /home/centos/test-consul-config-master/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro \
 	haproxy:1.6.5-alpine
